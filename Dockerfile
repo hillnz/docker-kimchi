@@ -47,6 +47,5 @@ RUN apt-update && apt install -y \
 
 RUN curl -o /tmp/wok.deb https://github.com/kimchi-project/wok/releases/download/${WOK_VERSION}/wok-${WOK_VERSION}-0.debian.noarch.deb && \
     curl -o /tmp/kimchi.deb https://github.com/kimchi-project/kimchi/releases/download/${KIMCHI_VERSION}/wok-${KIMCHI_VERSION}-0.debian.noarch.deb && \
-
-
-
+    dpkg -i wok.deb && dpkg -i kimchi.deb && \
+    rm /tmp/*.deb
